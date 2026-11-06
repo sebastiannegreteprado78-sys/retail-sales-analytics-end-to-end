@@ -1,40 +1,107 @@
-# retail-sales-analytics-end-to-end
-Análisis end-to-end de ventas retail y devoluciones usando Python, SQL, Excel y Looker Studio
-# 🛍️ E-Commerce Retail: Sales & Returns Analysis
+# Retail Sales & Returns Analysis
 
-An end-to-end data analysis project exploring 20,000+ fashion retail transactions to understand real net revenue by acquisition channel and identify root causes behind product returns.
+Análisis de ventas y devoluciones en retail con Python, SQL, Excel y Looker Studio.
 
-🔗 **Interactive BI Dashboard:** [View on Looker Studio]([PEGA_AQUI_TU_ENLACE_DE_LOOKER_STUDIO](https://datastudio.google.com/reporting/0814cd06-ff0b-469c-896b-e0f768b67148))
+## Proyecto
 
+Este proyecto evalúa el rendimiento real de un negocio de retail analizando más de 20.000 transacciones para responder dos preguntas clave:
 
+1. ¿Qué canales de marketing generan ingresos netos reales tras descontar devoluciones?
+2. ¿Qué categorías tienen mayor tasa de devolución y qué explica ese comportamiento?
 
-# Business Problem & Context
-The store generated **€701.78K** in gross sales, but lost **€208.39K** due to product returns (~29.7% return rate), leaving **€493.39K** in actual net revenue. 
-
-The goal of this analysis was to answer two key business questions:
-1. Which marketing channels are actually driving profitable sales after accounting for refunds?
-2. Which product categories have the highest return rates and why?
+La propuesta combina análisis financiero, limpieza de datos y reporting ejecutivo para convertir información operativa en decisiones de negocio.
 
 ---
 
-Key Findings
-* **Gross sales were misleading:** Almost 30% of total revenue went back to customers via returns, meaning high-volume channels were not necessarily the most profitable.
-* **Instagram was the top performer:** Delivered **€173.45K** in net revenue with a 26.8% return rate, outperforming Google and Email in retained earnings.
-* **Fit issues in Dresses & Footwear:** Both categories had return rates above 34%. Customer return logs showed that poor sizing guidance (*fit issues*) was the primary reason, pointing to an immediate operational fix on product detail pages.
+## Resumen ejecutivo
 
+El negocio registró **701,78K €** en ventas brutas, pero tuvo **208,39K €** en devoluciones, lo que equivale a una tasa de devolución aproximada del **29,7%**.
 
+Tras descontar devoluciones, el ingreso neto real fue de **493,39K €**, mostrando que el volumen bruto no siempre refleja la rentabilidad real del canal.
 
-## 🛠️ Tech Stack & Workflow
+### Hallazgos clave
 
-* **Python (Pandas):** Cleaned raw data, fixed inconsistent text values (`vestidos`, `CALZADO`, `pantalon`), handled currency formats, calculated discounted order subtotals, and exported clean datasets.
-* **SQL:** Queried gross sales vs. returned totals per channel using conditional aggregations (`CASE WHEN`), ensuring data consistency against accounting totals.
-* **Microsoft Excel:** Built channel summaries and detailed transactional audit sheets with standard financial formatting.
-* **Google Looker Studio:** Designed an executive single-screen dashboard featuring key metric cards, gross vs. net revenue comparisons, and interactive channel filtering.
+- **Instagram fue el canal con mejor rendimiento neto**: **173,45K €** de ingreso neto con una tasa de devolución del **26,8%**.
+- **Google y Email quedaron por detrás** en rendimiento neto, aunque sus ventas brutas fueron elevadas.
+- **Vestidos y calzado fueron las categorías más problemáticas** por devoluciones relacionadas con ajuste y talla.
+- **El principal problema no era solo el volumen de ventas, sino la calidad de la experiencia de compra y la información del producto**.
 
 ---
 
-## 📂 Repository Structure
-* `*.ipynb` — Complete Python analysis and data cleaning script.
-* `*.xlsx` / `*.csv` — Cleaned and aggregated datasets ready for reporting.
-* `dashboard_preview.png` — High-resolution screenshot of the executive dashboard.
-* `README.md` — Project documentation and business summary.
+## Stack tecnológico
+
+- **Python + Pandas**: limpieza de datos, normalización de categorías, tratamiento de formato monetario y cálculo de métricas.
+- **SQL**: validación y agregación de ventas, devoluciones y KPI financieros.
+- **Excel**: construcción de resúmenes operativos y auditoría de resultados.
+- **Looker Studio**: dashboard ejecutivo y visualización de KPI por canal.
+
+---
+
+## Flujo de trabajo
+
+1. Carga y consolidación de tablas transaccionales.
+2. Limpieza de categorías, montos y fechas.
+3. Unificación de pedidos y devoluciones.
+4. Cálculo de ventas brutas, importe devuelto, tasa de devolución e ingreso neto real.
+5. Exportación de datos limpios para análisis y dashboard.
+
+---
+
+## Impacto de negocio
+
+Este análisis permite tomar decisiones con base cuantitativa:
+
+- **Reorientar inversión por canal** según rendimiento neto real.
+- **Reducir devoluciones** enfocando esfuerzos en categorías con mayor riesgo.
+- **Mejorar la experiencia de compra** con información más clara sobre tallas y ajuste.
+- **Priorizar campañas** con mayor rentabilidad y menor riesgo financiero.
+
+---
+
+## Métricas principales
+
+- Ventas brutas por canal
+- Importe devuelto por canal
+- Tasa de devolución por canal
+- Ingreso neto real
+- Rendimiento por categoría de producto
+- Identificación de productos con mayor problema de ajuste
+
+---
+
+## Repositorio
+
+- `limpieza_con_python_y_sql.ipynb` — notebook principal con limpieza, análisis y KPI.
+- `reporte_ventas_limpio(Resumen Canales) (1).csv` — dataset final de resumen por canal.
+- `dashboard_preview.png` — vista previa del dashboard.
+- `requirements.txt` — dependencias del proyecto.
+- `README.md` — documentación del proyecto.
+
+---
+
+## Cómo reproducirlo
+
+1. Clona el repositorio.
+2. Instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Abre el notebook `limpieza_con_python_y_sql.ipynb` en Jupyter o VS Code.
+4. Ejecuta las celdas para cargar, limpiar y analizar los datos.
+
+---
+
+## Estado del proyecto
+
+El proyecto está finalizado como una base sólida de análisis de negocio con enfoque comercial y financiero. Su siguiente evolución natural sería automatizar el pipeline y publicar el dashboard en un entorno compartible.
+
+---
+
+## Siguientes pasos
+
+- Mejorar la narrativa del notebook con secciones más ejecutivas.
+- Añadir más gráficos por categoría de producto y canal.
+- Preparar una versión final para portfolio y presentación profesional.
+
